@@ -4,9 +4,9 @@
       <h5 class="mb-3">Create New Category (Genre)</h5>
       <div class="form-group">
         <label for="formAddCategory">Name</label>
-        <input [(ngModel)]="objectGenre.name" type="text" id="formAddCategory" name="formAddCategory" class="form-control myInput-elegant-2" placeholder="">
+        <input [(ngModel)]="name" type="text" id="formAddCategory" name="formAddCategory" class="form-control myInput-elegant-2" placeholder="">
       </div>
-      <button (click)="addGenre(name)" [disabled]="!objectGenre.name" class="btn btn-success d-block ml-auto">
+      <button (click)="addGenre(name)" [disabled]="!name" class="btn btn-success d-block ml-auto">
           <i class="fas fa-plus"></i> Create</button>
     </div>
     <div class="col-12 col-md-4 mb-3">

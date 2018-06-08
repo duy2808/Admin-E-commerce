@@ -28,11 +28,10 @@ export class CategoryComponent implements OnInit {
   getGenres(): void {
     this.genreService.getGenres().subscribe(z => this.genres = z);
   };
-  addGenre(): void {
-    if (this.objectGenre.name.length > 0) {
-      // let genre = new Genre(this.name);
-
-      this.genreService.addGenre(this.objectGenre).subscribe(_ => {
+  addGenre(name): void {
+    if (this.name.length > 0) {
+      let genre = new Genre(name);
+      this.genreService.addGenre(genre).subscribe(_ => {
         this.name = "";
         this.genres.push(_);
       });

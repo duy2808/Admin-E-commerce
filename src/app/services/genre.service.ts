@@ -5,8 +5,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Genre } from '../view-models/genre';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-  params: new HttpParams()
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' 
+})
 };
 
 @Injectable({
@@ -23,16 +23,16 @@ export class GenreService {
     return this.http.get<Genre[]>(this.genresUrl);
   }
   addGenre(genre: Genre): Observable<Genre> {
-    return this.http.post<Genre>(this.genresUrl, "name="+genre.name, httpOptions);
+    return this.http.post<Genre>(this.genresUrl, genre, httpOptions);
   }
   deleteGenre (genre: Genre): Observable<Genre> {
     // const id = typeof genre === 'string' ? genre : genre._id;
     const url = `${this.genresUrl}/${genre._id}`;
     return this.http.delete<Genre>(url, httpOptions);
   }
-  updateGenre (genre: Genre): Observable<any> {
-    return this.http.put(this.genresUrl, "name="+genre.name, httpOptions);
-  }
+  // updateGenre (genre: Genre): Observable<any> {
+  //   return this.http.put(this.genresUrl, "name="+genre.name, httpOptions);
+  // }
   // getGenre(_id: string): Observable<Genre> {
   //   // TODO: send the message _after_ fetching the hero
   // return of(HEROES.find(hero => hero.id === id));

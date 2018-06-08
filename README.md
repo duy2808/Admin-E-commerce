@@ -1,5 +1,10 @@
 # AdminAngular
 
+## Creator's Version Note:
+admin 1.0.0 - project setup, routing (dashboard & category & product)
+admin 1.0.1 - category binding (addGenre)
+admin 1.0.2 - category binding (addGenre) use objectGenre
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
 ## Development server

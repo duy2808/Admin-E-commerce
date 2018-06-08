@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 import { CategoryComponent } from '../category/category.component';
 import { ProductComponent } from '../product/product.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { ManageCategoriesComponent } from '../manage-categories/manage-categories.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
   {path: 'dashboard', component: DashboardComponent },
   {path: 'category', component: CategoryComponent },
-  {path: 'product', component: ProductComponent }
+  {path: 'product', component: ProductComponent },
+  {path: 'manage-categories', component: ManageCategoriesComponent }
   
   
 ];

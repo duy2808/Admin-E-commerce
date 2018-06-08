@@ -13,11 +13,14 @@ export class CategoryComponent implements OnInit {
   name: string;
   selectedGenre: Genre;
   selectedDelete: Genre;
-  // objectGenre: Genre;
+  updatingGenre = this.selectedDelete;
   objectGenre = new Genre(name);
+  // objectGenre: Genre;
+  // updatingGenre= new Genre(this.selectedGenre.name);
   constructor(private genreService: GenreService, private location: Location, private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.getGenres();
   }
   onSelect(genre):void {
     this.selectedGenre = genre;
@@ -43,6 +46,10 @@ export class CategoryComponent implements OnInit {
     this.genreService.deleteGenre(genre).subscribe(
       
     );
+  }
+  updateGenre(): void {
+    this.genreService.updateGenre(this.selectedGenre)
+      .subscribe();
   }
   // onType(name): boolean {
   //   return this.genreService.onType(name);

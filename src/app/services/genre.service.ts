@@ -30,14 +30,21 @@ export class GenreService {
     const url = `${this.genresUrl}/${genre._id}`;
     return this.http.delete<Genre>(url, httpOptions);
   }
+  /** PUT: update the hero on the server */
   // updateGenre (genre: Genre): Observable<any> {
-  //   return this.http.put(this.genresUrl, "name="+genre.name, httpOptions);
+  //   return this.http.put(this.genresUrl, genre, httpOptions);
   // }
-  // getGenre(_id: string): Observable<Genre> {
-  //   // TODO: send the message _after_ fetching the hero
-  // return of(HEROES.find(hero => hero.id === id));
-  // return this.http.get<Genre[]>(this.genresUrl).find(hero => hero.id === id);
-  // }
+  updateGenre(genre:Genre): Observable<Genre> {
+    const url = `${this.genresUrl}/${genre._id}`;
+    return this.http.put<Genre>(url, genre, httpOptions )
+  }
+  searchHeroes(term: string): Observable<Genre[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      // return of([]);
+    }
+    return this.http.get<Genre[]>(`${this.genresUrl}/?name=${term}`);
+  }
   onType(ten): boolean {
     // return !this.name;
     if (this.ten.length == 0) {

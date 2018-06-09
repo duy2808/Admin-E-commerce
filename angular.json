@@ -37,7 +37,7 @@
               "node_modules/pace-progress/pace.min.js",
               "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
               "node_modules/@coreui/coreui/dist/js/coreui.min.js",
-              "node_modules/chart.js/dist/Chart.js",
+
               "node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js",
               "src/assets/js/main.js"
 

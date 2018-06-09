@@ -131,15 +131,15 @@
         </div>
         <div class="form-group">
           <label for="formEditBookReleaseDate">Release Date</label>
-          <input [(ngModel)]="selectedBook.releaseDate" type="date" id="formEditBookReleaseDate" name="formEditBookReleaseDate" class="form-control myInput-elegant-2" placeholder="">
+          <input [(ngModel)]="selectedBook.releaseDate" type="string" id="formEditBookReleaseDate" name="formEditBookReleaseDate" class="form-control myInput-elegant-2" placeholder="">
         </div>
         <div class="form-group">
           <label for="formEditBookShortDescription">Short Description</label>
-          <textarea class="form-control myInput-elegant-2" id="formEditBookShortDescription" rows="3"></textarea>
+          <textarea [(ngModel)]="selectedBook.shortDescription" class="form-control myInput-elegant-2" id="formEditBookShortDescription" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="formEditBookFullDescription">Full Description</label>
-          <textarea class="form-control myInput-elegant-2" id="formEditBookFullDescription" rows="3"></textarea>
+          <textarea [(ngModel)]="selectedBook.fullDescription" class="form-control myInput-elegant-2" id="formEditBookFullDescription" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="formEditBookImages">Images</label>
@@ -156,7 +156,7 @@
         <div class="form-group">
           <label for="formAddBookReSelectGenre">Genre</label>
           <select class="form-control" id="formAddBookReSelectGenre">
-            <option *ngFor="let book of books">{{book.title}}</option>
+            <option *ngFor="let book of books">{{book.genre.name}}</option>
           </select>
         </div>
       </div>

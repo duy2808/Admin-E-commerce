@@ -4,8 +4,7 @@
       <h5 class="mb-3">Create New Category (Genre)</h5>
       <div class="form-group">
         <label for="formAddCategory">Name</label>
-        <input [(ngModel)]="objectGenre.name" type="text" id="formAddCategory" name="formAddCategory" class="form-control myInput-elegant-2" placeholder="">
-        <!-- <span>{{objectGenre.name}}</span> -->
+        <input [(ngModel)]="objectGenre.name" (keyup.enter)="addGenre()" type="text" id="formAddCategory" name="formAddCategory" class="form-control myInput-elegant-2" placeholder="">
       </div>
       <button (click)="addGenre()" [disabled]="!(objectGenre.name)" class="btn btn-success d-block ml-auto">
           <i class="fas fa-plus"></i> Create</button>
@@ -71,7 +70,7 @@
         <!-- doing -->
         <div class="form-group">
             <label for="formAddCategory">Category:</label>
-            <input [(ngModel)]="selectedGenre.name" type="text" id="formAddCategory" name="formAddCategory" class="form-control myInput-elegant-2"
+            <input [(ngModel)]="selectedGenre.name"  type="text" id="formAddCategory" name="formAddCategory" class="form-control myInput-elegant-2"
               placeholder="">
             
           </div>

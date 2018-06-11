@@ -28,7 +28,6 @@ export class CategoryComponent implements OnInit {
   onSelectDelete(genre):void {
     this.selectedDelete = genre;
   }
-  
   getGenres(): void {
     this.genreService.getGenres().subscribe(z => this.genres = z);
   };

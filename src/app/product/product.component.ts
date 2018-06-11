@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   constructor(private bookService:BookService) { }
 
   ngOnInit() {
+    this.getBooks();
   }
   onSelect(book): void {
     this.selectedBook = book;

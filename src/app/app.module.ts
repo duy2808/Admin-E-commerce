@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { ProductAddComponent } from './product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ManageCategoriesComponent } from './manage-categories/manage-categories
     CategoryComponent,
     ProductComponent,
     DashboardComponent,
-    ManageCategoriesComponent
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,

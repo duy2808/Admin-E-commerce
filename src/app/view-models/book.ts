@@ -4,7 +4,7 @@ import { Image } from "./image";
 import { Size } from "./size";
 
 export class Book {
-    // _id: string;
+    _id: string;
     title: string;
     shortDescription: string;
     fullDescription: string;
@@ -18,11 +18,13 @@ export class Book {
     releaseDate: string;
     comments: Comment[];
     createDate: string;
-    images: Image;
-    size: Size;
-    genre: Genre;
+    images: Image = new Image();
+    size: Size = new Size();
+    genre: Genre = new Genre('');
     
-    constructor() {
+    constructor(
+        // images: Image
+    ) {
         //  this.title = '';
         //  this.shortDescription = '';
         //  this.fullDescription = fullDescription;
@@ -35,7 +37,7 @@ export class Book {
         // this.sellingPrice = sellingPrice;
         // this.releaseDate = releaseDate;
    
-         //this.images = new Image('');
+        //  this.images = new Image('');
         // this.size = size;
         //this.genre = genre;
     }

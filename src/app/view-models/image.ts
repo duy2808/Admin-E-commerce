@@ -1,10 +1,9 @@
 export class Image {
     main: string;
-    /**
-     *
-     */
-    constructor(main:string) {
-        this.main = main;
+    constructor(
+        // main:string
+    ) {
+        // this.main = main;
         
     }
 }

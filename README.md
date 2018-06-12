@@ -7,6 +7,7 @@ admin 1.0.2 - category binding (addGenre) use objectGenre
 admin 1.0.5 - Sidebar re-arranged, product table, product detail (modal)
 admin 1.0.6 - Push for demo: fix add Book
 admin 1.0.7 - WYSIWYG
+admin 1.0.8 - Sidebar re-arranged, Product update
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
 ## Development server

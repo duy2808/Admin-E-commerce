@@ -45,4 +45,5 @@ export class ProductAddComponent implements OnInit {
       console.log(_);
     });
   }
+  
 }

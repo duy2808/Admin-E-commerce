@@ -11,7 +11,6 @@ const httpOptions = {
 
 
 export class BookService {
-  // books: Book[];
   private booksUrl = 'http://green-web-bookshop.herokuapp.com/api/books';
 
   constructor(private http: HttpClient) { }
@@ -22,5 +21,13 @@ export class BookService {
   addBook(book: Book): Observable<Book> {
     return this.http.post<Book>(this.booksUrl, book, httpOptions);
   }
- 
+  deleteBook (book: Book): Observable<Book> {
+    // const id = typeof genre === 'string' ? genre : genre._id;
+    const url = `${this.booksUrl}/${book._id}`;
+    return this.http.delete<Book>(url, httpOptions);
+  }
+  updateBook(book: Book): Observable<Book> {
+    const url = `${this.booksUrl}/${book._id}`;
+    return this.http.put<Book>(url, book, httpOptions )
+  }
 }

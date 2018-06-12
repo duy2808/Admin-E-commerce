@@ -7,95 +7,106 @@
         <button (click)="addBook()" class="btn btn-success d-block ml-auto">
           <i class="fas fa-plus"></i> Create</button>
       </div>
-    <div class="col-12 col-sm-6 mb-3">
+    <div class="col-12 mb-3">
         <div class="form-group">
             <label for="formAddBookTitle">Title (required)</label>
             <input [(ngModel)]="objectBook.title" type="text" id="formAddBookTitle" name="formAddBookTitle" class="form-control myInput-elegant-2" placeholder="">
-            <span>{{objectBook.title}}</span>
           </div>
     </div>
-    <div class="col-12 col-sm-6 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
             <label for="formAddBookAuthor">Author (required)</label>
             <input [(ngModel)]="objectBook.author" type="text" id="formAddBookAuthor" name="formAddBookAuthor" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
             <label for="formAddBookPublisher">Publisher (required)</label>
             <input [(ngModel)]="objectBook.publisher" type="text" id="formAddBookPublisher" name="formAddBookPublisher" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <div class="form-group">
+                <label for="formAddBookSelectGenre">Genre (required)</label>
+                <select *ngIf="genres" [(ngModel)]="objectBook.genre" class="form-control" id="formAddBookSelectGenre">
+                  <option *ngFor="let x of genres" [ngValue]="x">{{x.name}}</option>
+                </select>
+              </div>
+        </div>
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
             <label for="formAddBookPages">Pages</label>
             <input [(ngModel)]="objectBook.pages" type="number" id="formAddBookPages" name="formAddBookPages" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
             <label for="formAddBookWeight">Weight</label>
             <input [(ngModel)]="objectBook.weight" type="number" id="formAddBookWeight" name="formAddBookWeight" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
             <label for="formAddBookReleaseDate">Release Date</label>
             <input [(ngModel)]="objectBook.releaseDate" type="text" id="formAddBookReleaseDate" name="formAddBookReleaseDate" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
             <label for="formAddBookSKU">SKU</label>
             <input [(ngModel)]="objectBook.sku" type="text" id="formAddBookSKU" name="formAddBookSKU" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
-            <label for="formAddBookPreviousPrice">Previous Price</label>
+            <label for="formAddBookPreviousPrice">Previous Price (required)</label>
             <input [(ngModel)]="objectBook.previousPrice" type="number" id="formAddBookPreviousPrice" name="formAddBookPreviousPrice" class="form-control myInput-elegant-2"
               placeholder="">
               <span>{{objectBook.previousPrice}}</span>
           </div>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4 mb-3">
         <div class="form-group">
-            <label for="formAddBookSellingPrice">Selling Price</label>
+            <label for="formAddBookSellingPrice">Selling Price (required)</label>
             <input [(ngModel)]="objectBook.sellingPrice" type="number" id="formAddBookSellingPrice" name="formAddBookSellingPrice" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
-    <!-- <div class="col-12 col-sm-6 col-lg-4 mb-3">
+    <div class="col-12 col-md-8 mb-3">
         <div class="form-group">
-            <label for="formAddBookImages">Images</label>
-            <input [(ngModel)]="objectBook.images.main" type="text" id="formAddBookImages" name="formAddBook" class="form-control myInput-elegant-2" placeholder="">
-          </div>
-    </div> -->
-    <!-- <div class="col-12 col-sm-6 col-lg-4 mb-3">
-        <div class="form-group">
-            <label for="formAddBookSizeWidth">Size (width)</label>
-            <input [(ngModel)]="objectBook.size.width" type="number" id="formAddBookSizeWidth" name="formAddBookSizeWidth" class="form-control myInput-elegant-2" placeholder="">
-          </div>
-    </div> -->
-    <!-- <div class="col-12 col-sm-6 col-lg-4 mb-3">
-        <div class="form-group">
-            <label for="formAddBookSizeHeight">Size (height)</label>
-            <input [(ngModel)]="objectBook.size.height" type="number" id="formAddBookSizeHeight" name="formAddBookSizeHeight" class="form-control myInput-elegant-2" placeholder="">
-          </div>
-    </div> -->
-    <!-- <div class="col-12 col-sm-6 col-lg-4 mb-3">
-        <div class="form-group">
-            <label for="formAddBookSizeDepth">Size (depth)</label>
-            <input [(ngModel)]="objectBook.size.depth" type="number" id="formAddBookSizeDepth" name="formAddBookSizeDepth" class="form-control myInput-elegant-2" placeholder="">
-          </div>
-    </div> -->
-    <div class="col-12 col-sm-6 col-lg-4 mb-3">
-        <div class="form-group">
-            <label for="formAddBookSelectGenre">Genre (required)</label>
-            <select *ngIf="genres" [(ngModel)]="objectBook.genre" class="form-control" id="formAddBookSelectGenre">
-              <option *ngFor="let x of genres" [ngValue]="x">{{x.name}}</option>
-            </select>
+            <label for="formAddBookImages">Main Image</label>
+            <input [(ngModel)]="objectBook.images.main" type="text" id="formAddBookImages" name="formAddBookImages" class="form-control myInput-elegant-2 mb-2" placeholder="">
+            <a href="" class="text-dark" data-toggle="collapse" href="#collapseReviewImage" role="button" aria-expanded="false" aria-controls="collapseReviewImage"><i class="far fa-image"></i> Image review</a>
           </div>
     </div>
+    <div class="col-8 col-md-4 mb-3">
+            <div class="collapse" id="collapseReviewImage">
+                    <img src="{{objectBook.images.main}}" alt="Warning: No image link found. You must add a link for image" class="w-100">
+                  </div>
+        
+    </div>
+    <div class="col-12">
+        <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                        <div class="form-group">
+                            <label for="formAddBookSizeWidth">Size (width)</label>
+                            <input [(ngModel)]="objectBook.size.width" type="number" id="formAddBookSizeWidth" name="formAddBookSizeWidth" class="form-control myInput-elegant-2" placeholder="">
+                          </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                        <div class="form-group">
+                            <label for="formAddBookSizeHeight">Size (height)</label>
+                            <input [(ngModel)]="objectBook.size.height" type="number" id="formAddBookSizeHeight" name="formAddBookSizeHeight" class="form-control myInput-elegant-2" placeholder="">
+                          </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                        <div class="form-group">
+                            <label for="formAddBookSizeDepth">Size (depth)</label>
+                            <input [(ngModel)]="objectBook.size.depth" type="number" id="formAddBookSizeDepth" name="formAddBookSizeDepth" class="form-control myInput-elegant-2" placeholder="">
+                          </div>
+                    </div>
+        </div>
+    </div>
+    
     <div class="col-12 mb-3">
         <div class="form-group">
             <label for="formAddBookShortDescription">Short Description</label>
@@ -108,8 +119,6 @@
             <!-- <textarea [(ngModel)]="objectBook.fullDescription" class="form-control myInput-elegant-2" id="formAddBookFullDescription" rows="3"></textarea> -->
             <textarea [(ngModel)]="objectBook.fullDescription" [froalaEditor]="HelloFroala" class="form-control" id="formAddBookFullDescription" rows="10"></textarea>
           </div>
-          <!-- <div [froalaEditor]>Hello, Froala!</div> -->
-          <!-- <div [froalaEditor]>Hello, Froala!</div> -->
           
     </div>
     

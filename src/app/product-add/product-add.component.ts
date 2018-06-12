@@ -35,15 +35,13 @@ export class ProductAddComponent implements OnInit {
 
   ngOnInit() {
     this.getGenre();
-    
+
   }
   getGenre(): void {
     this.genreService.getGenres().subscribe(__ => this.genres = __)
   }
   addBook(): void {
-  
- 
-    this.bookService.addBook(this.objectBook).subscribe(_=> {
+    this.bookService.addBook(this.objectBook).subscribe(_ => {
       console.log(_);
     });
   }

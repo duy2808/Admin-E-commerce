@@ -8,7 +8,11 @@ import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductAddComponent } from './product-add/product-add.component';
+// Import Froala Editor.
+import "froala-editor/js/froala_editor.pkgd.min.js";
 
+// Import Angular2 plugin.
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,9 @@ import { ProductAddComponent } from './product-add/product-add.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FroalaEditorModule.forRoot(), 
+    FroalaViewModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

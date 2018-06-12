@@ -27,6 +27,8 @@
               "src/assets/vendors/font-awesome-5/web-fonts-with-css/css/fontawesome-all.min.css",
               "node_modules/@coreui/icons/css/coreui-icons.min.css",
               "node_modules/flag-icon-css/css/flag-icon.min.css",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/froala-editor/css/froala_style.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/simple-line-icons/css/simple-line-icons.css"
             ],
@@ -37,7 +39,7 @@
               "node_modules/pace-progress/pace.min.js",
               "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
               "node_modules/@coreui/coreui/dist/js/coreui.min.js",
-
+              "node_modules/froala-editor/js/froala_editor.pkgd.min.js",
               "node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js",
               "src/assets/js/main.js"
 

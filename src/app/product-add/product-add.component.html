@@ -9,20 +9,20 @@
       </div>
     <div class="col-12 col-sm-6 mb-3">
         <div class="form-group">
-            <label for="formAddBookTitle">Title</label>
+            <label for="formAddBookTitle">Title (required)</label>
             <input [(ngModel)]="objectBook.title" type="text" id="formAddBookTitle" name="formAddBookTitle" class="form-control myInput-elegant-2" placeholder="">
             <span>{{objectBook.title}}</span>
           </div>
     </div>
     <div class="col-12 col-sm-6 mb-3">
         <div class="form-group">
-            <label for="formAddBookAuthor">Author</label>
+            <label for="formAddBookAuthor">Author (required)</label>
             <input [(ngModel)]="objectBook.author" type="text" id="formAddBookAuthor" name="formAddBookAuthor" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 mb-3">
         <div class="form-group">
-            <label for="formAddBookPublisher">Publisher</label>
+            <label for="formAddBookPublisher">Publisher (required)</label>
             <input [(ngModel)]="objectBook.publisher" type="text" id="formAddBookPublisher" name="formAddBookPublisher" class="form-control myInput-elegant-2" placeholder="">
           </div>
     </div>
@@ -90,7 +90,7 @@
     </div> -->
     <div class="col-12 col-sm-6 col-lg-4 mb-3">
         <div class="form-group">
-            <label for="formAddBookSelectGenre">Genre</label>
+            <label for="formAddBookSelectGenre">Genre (required)</label>
             <select *ngIf="genres" [(ngModel)]="objectBook.genre" class="form-control" id="formAddBookSelectGenre">
               <option *ngFor="let x of genres" [ngValue]="x">{{x.name}}</option>
             </select>
@@ -105,8 +105,12 @@
     <div class="col-12 mb-3">
         <div class="form-group">
             <label for="formAddBookFullDescription">Full Description</label>
-            <textarea [(ngModel)]="objectBook.fullDescription" class="form-control myInput-elegant-2" id="formAddBookFullDescription" rows="3"></textarea>
+            <!-- <textarea [(ngModel)]="objectBook.fullDescription" class="form-control myInput-elegant-2" id="formAddBookFullDescription" rows="3"></textarea> -->
+            <textarea [(ngModel)]="objectBook.fullDescription" [froalaEditor]="HelloFroala" class="form-control" id="formAddBookFullDescription" rows="10"></textarea>
           </div>
+          <!-- <div [froalaEditor]>Hello, Froala!</div> -->
+          <!-- <div [froalaEditor]>Hello, Froala!</div> -->
+          
     </div>
     
   </div>

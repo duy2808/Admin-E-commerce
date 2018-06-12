@@ -183,27 +183,26 @@
       </a>
     </div>
     <div class="col-12 mb-3 table-responsive">
-      <table class="table table-striped table-hover table-outline mb-0">
+      <table class="table table-striped table-hover table-outline mb-2">
         <thead class="thead-light">
           <tr>
             <th>Product</th>
             <th>Author</th>
             <th>Publisher</th>
             <th>
-              <a (click)="getBooks()" class="" href="#">
-                <i class="fas fa-sync-alt"></i> Refresh</a>
+                <button (click)="getBooks()" class="btn btn-link p-0 d-block ml-auto" type="button"><i class="fas fa-sync-alt"></i> Refresh</button>
             </th>
           </tr>
         </thead>
         <tbody *ngIf="books" class="">
-          <tr *ngFor="let book of books" data-toggle="modal" title="Click to view details">
+          <tr *ngFor="let book of books" title="Click to view details" class="myCursor">
 
-            <td (click)="onSelect(book)" data-target="#modalProductDetail">{{book.title}}</td>
-            <td (click)="onSelect(book)" data-target="#modalProductDetail">{{book.author}}</td>
-            <td (click)="onSelect(book)" data-target="#modalProductDetail">{{book.publisher}}</td>
+            <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal">{{book.title}}</td>
+            <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal">{{book.author}}</td>
+            <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal">{{book.publisher}}</td>
             <td>
-              <span>
-                <a (click)="onSelectEdit(book)" class="mr-3" data-toggle="modal" data-target="#modalEdit" href="">Edit</a>
+              <span class="d-block text-right">
+                <a (click)="onSelectEdit(book)" class="mr-3" data-toggle="modal" title="Edit this item"  data-target="#modalEdit" href="">Edit</a>
                 <a (click)="onSelectDelete(book)" class="text-danger" title="Remove" data-toggle="modal" data-target="#modalDelete" href="">Delete</a>
               </span>
             </td>
@@ -211,6 +210,11 @@
          
         </tbody>
       </table>
+      <p>Displaying {{books?.length || '0 item'}}
+          <span *ngIf="books?.length == 1">item</span> 
+          <span *ngIf="books?.length == 0">item</span> 
+          <span *ngIf="books?.length">items</span> 
+        </p>
     </div>
     <!-- Pagination -->
     <div class="col-12 d-flex justify-content-center mb-3">
@@ -237,8 +241,8 @@
   </div>
 </div>
 <!-- MODAL: Details -->
-<div id="modalProductDetail" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+<div id="modalProductDetail" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Product Details</h5>
@@ -250,7 +254,7 @@
         <div class="container-fluid">
           <div class="row" *ngIf="selectedBook">
             <div class="col-4">
-              <img src="{{selectedBook.images.main}}" class="w-100" alt="">
+              <!-- <img src="{{selectedBook.images.main}}" class="w-100" alt=""> -->
             </div>
             <div class="col-8 d-flex flex-column">
               <h6>{{selectedBook.title}}</h6>
@@ -264,7 +268,7 @@
               <span>Weight: {{selectedBook.weight}}</span>
               <span>SKU: {{selectedBook.sku}}</span>
               <span>Release Date: {{selectedBook.releaseDate}}</span>
-              <span>Dimension: {{selectedBook.size.width}} x {{selectedBook.size.height}} x {{selectedBook.size.depth}}</span>
+              <!-- <span>Dimension: {{selectedBook.size.width}} x {{selectedBook.size.height}} x {{selectedBook.size.depth}}</span> -->
               <span>Genre: {{selectedBook.genre.name}}</span>
               <span class="font-italic">{{selectedBook.shortDescription}}</span>
             </div>
@@ -281,7 +285,7 @@
   </div>
 </div>
 <!-- Modal: DELETE -->
-<div *ngIf="selectedDelete" id="modalDelete" class="modal" tabindex="-1" role="dialog">
+<div *ngIf="selectedDelete" id="modalDelete" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -303,7 +307,7 @@
 </div>
 <!-- Modal: EDIT BOOK -->
 <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
@@ -395,10 +399,10 @@
                 <input [(ngModel)]="selectedEdit.images.main" type="text" id="formAddBookImages" name="formAddBookImages" class="form-control myInput-elegant-2 mb-2"
                   placeholder="">
                 <a href="" class="text-dark" data-toggle="collapse" href="#collapseReviewImage" role="button" aria-expanded="false" aria-controls="collapseReviewImage">
-                  <i class="far fa-image"></i> Image review</a>
+                  <i class="far fa-image"></i> View Image</a>
               </div>
             </div>
-            <div class="col-8 col-md-4 mb-3" *ngIf="selectedEdit.images">
+            <div class="col-12 col-md-10 col-lg-4 mb-3" *ngIf="selectedEdit.images">
               <div class="collapse" id="collapseReviewImage">
                 <img src="{{selectedEdit.images.main}}" alt="Warning: No image link found. You must add a link for image" class="w-100">
               </div>

@@ -36,34 +36,34 @@
                   <li class="nav-title text-warning">ADMIN</li>
                   <li class="nav-item">
                       <a class="nav-link" href="#" routerLinkActive="active">
-                          <i class="far fa-user nav-icon"></i> Profile
+                          <i class="fas fa-user nav-icon"></i> Profile
                       </a>
                   </li>
                   <li class="nav-title text-warning">ACCOUNTS</li>
                   <li class="nav-item">
                           <a class="nav-link" href="#" routerLinkActive="active">
-                              <i class="fas fa-list-ul nav-icon"></i> Manage Users
+                              <i class="far fa-address-book nav-icon"></i> Manage Users
                           </a>
                       </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#" routerLinkActive="active">
-                          <i class="fab fa-product-hunt nav-icon"></i> Manage Staffs
+                          <i class="far fa-address-book nav-icon"></i> Manage Staffs
                       </a>
                   </li>
                   <li class="nav-title text-warning">SHOP</li>
                   <li class="nav-item" >
                           <a class="nav-link" href="" routerLink="/category" routerLinkActive="active">
-                              <i class="fas fa-asterisk nav-icon"></i> All Categories
+                              <i class="fas fa-book nav-icon"></i> All Categories
                           </a>
                       </li>
                   <li class="nav-item" >
                       <a class="nav-link" href="#" routerLink="/product" routerLinkActive="active">
-                          <i class="fas fa-asterisk nav-icon"></i> All Products
+                          <i class="fas fa-book nav-icon"></i> All Products
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#" routerLinkActive="active">
-                          <i class="fas fa-asterisk nav-icon"></i> Purchase Orders
+                          <i class="fas fa-book nav-icon"></i> Purchase Orders
                       </a>
                   </li>
                   
@@ -102,13 +102,8 @@
       </div>
       <main class="main">
           <!-- Breadcrumb-->
-          <ol class="breadcrumb">
-              <li class="breadcrumb-item">Home</li>
-              <li class="breadcrumb-item">
-                  <a href="#">Admin</a>
-              </li>
-              <li class="breadcrumb-item active">Dashboard</li>
-          </ol>
+         <app-breadcrumb></app-breadcrumb>
+         
           <!-- Main content -->
           <router-outlet></router-outlet>
       </main>
@@ -126,7 +121,7 @@
           </ul>
     </aside>
   </div>
-  <footer class="app-footer">
+  <footer class="app-footer mt-4">
       <div>
           <a href="../../index.html">Brand Co., Ltd</a>
           <span>&copy; 2018.</span>

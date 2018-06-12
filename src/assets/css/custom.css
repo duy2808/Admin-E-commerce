@@ -1,0 +1,7 @@
+.active * {
+    color: #20a8d8;
+}
+
+.myCursor>td[data-target] {
+    cursor: pointer;
+}

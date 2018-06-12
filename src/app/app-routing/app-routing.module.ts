@@ -8,14 +8,14 @@ import { ProductAddComponent } from '../product-add/product-add.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
-  {path: 'dashboard', component: DashboardComponent },
-  {path: 'category', component: CategoryComponent },
-  {path: 'product', component: ProductComponent },
-  {path: 'product-add', component: ProductAddComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'product-add', component: ProductAddComponent }
 ];
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   declarations: []
 })
 export class AppRoutingModule { }

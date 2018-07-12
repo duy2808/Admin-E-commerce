@@ -9,20 +9,22 @@ import { Genre } from '../view-models/genre';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+  componentTitle: string = 'Categories';
   genres: Genre[];
   name: string;
   selectedGenre: Genre;
   selectedDelete: Genre;
   updatingGenre = this.selectedDelete;
-  objectGenre = new Genre(name);
+  objectGenre = new Genre('');
+  noti:string;
+  notification = {}; 
   on_s: string = "items";
-  // objectGenre: Genre;
-  // updatingGenre= new Genre(this.selectedGenre.name);
+  
   constructor(private genreService: GenreService, private location: Location, private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.getGenres();
-    // this.countGenres();
+    
   }
   onSelect(genre):void {
     this.selectedGenre = genre;
@@ -33,18 +35,16 @@ export class CategoryComponent implements OnInit {
   getGenres(): void {
     this.genreService.getGenres().subscribe(z => this.genres = z);
   };
-  // countGenres(): void {
-  //   if (this.genres.length == 1 ) {
-
-  //   }
-  // }
+  
   addGenre(): void {
+    this.noti = this.objectGenre.name;
     if (this.objectGenre.name.length > 0) {
       this.genreService.addGenre(this.objectGenre).subscribe(_ => {
         this.objectGenre.name = "";
         this.genres.push(_);
       });
     }
+    this.onNoti();
   }
   deleteGenre(genre: Genre): void {
     this.genres = this.genres.filter(h => h !== genre);
@@ -55,5 +55,11 @@ export class CategoryComponent implements OnInit {
   updateGenre(): void {
     this.genreService.updateGenre(this.selectedGenre)
       .subscribe();
+  }
+  
+  onNoti():void {
+    let x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 }

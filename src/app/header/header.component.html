@@ -1,0 +1,104 @@
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+  <header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show" title="Show/Hide Menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="" routerLink="/dashboard">
+            <span class="navbar-brand-full" alt="Brand Logo Full">Admin Panel</span>
+            
+        </a>
+    <!-- <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+      <span class="navbar-toggler-icon"></span>Hello2
+    </button> -->
+    
+    
+    <ul class="nav navbar-nav d-md-down-none ml-auto">
+      
+    </ul>
+    
+    
+   
+  </header>
+
+   <!-- side-nav -->
+  <div class="app-body">
+      <div class="sidebar ">
+          <nav class="sidebar-nav ">
+              <ul class="nav">
+                  
+                  <li class="nav-title text-warning">ADMIN</li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="#" routerLinkActive="active">
+                          <i class="fas fa-user nav-icon"></i> Profile
+                      </a>
+                  </li>
+                  
+                  
+                  <li class="nav-title text-warning">Management Inventory</li>
+                  <li class="nav-item" >
+                          <a class="nav-link" href="" routerLink="/category" routerLinkActive="active">
+                              <i class="fas fa-book nav-icon"></i> Categories
+                          </a>
+                      </li>
+                  <li class="nav-item" >
+                      <a class="nav-link" href="#" routerLink="/product" routerLinkActive="active">
+                          <i class="fa fa-book nav-icon"></i> Books
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" routerLinkActive="active">
+                          <i class="fas fa-book nav-icon"></i> Purchase Orders
+                      </a>
+                  </li>
+                  
+                  
+                  
+                  <li class="nav-title text-warning">EXTENSION</li>
+                  
+                  <li class="nav-item nav-dropdown">
+                      <a class="nav-link nav-dropdown-toggle" href="#">
+                          <i class="fas fa-list-ul nav-icon"></i> Dashboard </a>
+                      <ul class="nav-dropdown-items">
+                          <li class="nav-item">
+                              <a class="nav-link" href="#" routerLink="" routerLinkActive="active">
+                                  <i class="nav-icon"></i> Home Page</a>
+                          </li>
+                          <li class="nav-item">
+                              <a (click)='onLogout()' class="nav-link" href="#" routerLink="" routerLinkActive="active">
+                                  <i class="nav-icon"></i> Log Out</a>
+                          </li>
+                      </ul>
+                  </li>
+
+              </ul>
+          </nav>
+          <!-- <button class="sidebar-minimizer brand-minimizer " type="button"></button> -->
+      </div>
+      <main class="main">
+          
+          <!-- Main content -->
+          <router-outlet></router-outlet>
+      </main>
+    
+  </div>
+  
+<!-- MODAL: Admin Logout -->
+  <div class="modal fade" id="modalAdminLogout" tabindex="-1" role="dialog" aria-labelledby="modalAdminLogoutLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Admin Logout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are yout sure want to logout?</p>
+        </div>
+        <div class="modal-footer">
+            <button click='onLogout' type="button" class="btn btn-primary">Yes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>

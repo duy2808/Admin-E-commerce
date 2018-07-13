@@ -3,8 +3,8 @@
     <form [formGroup]="bookForm" #formDir="ngForm">
         <div class="row">
             <div class="col-12">
-                    <h2 class="text text-uppercase font-weight-bold mt-3"> Add New Book</h2> <button type="button" class="btn btn-warning" ><a routerLink="/product" href="" class="text-dark">
-                        All products</a></button> 
+                    <h2 class="text text-uppercase font-weight-bold mt-3"> Add New Book</h2> <button type="button" class="btn btn-add button" ><a routerLink="/product" href="" >
+                       <span> All products</span></a></button> 
                     <hr>
                     
             </div>
@@ -175,8 +175,8 @@
             </div>
             <hr>
             <div class="col-12">
-                    <button type="button" class="btn btn-danger rounded-circle border border-success " (click)="formDir.resetForm({})"> Clear </button>
-                    <button type="submit" (click)="onSaveBook()" [disabled]="bookForm.invalid" class="btn btn-success rounded-circle border border-danger float-right">
+                    <button type="button" class="btn btn-dan  " (click)="formDir.resetForm({})"> Clear </button>
+                    <button type="submit" (click)="onSaveBook()" [disabled]="bookForm.invalid" class="btn btn-add  float-right">
                             Add</button>
                 </div>
 

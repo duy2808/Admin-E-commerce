@@ -6,10 +6,11 @@ import { AuthService } from '../auth/auth.service'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  user_email:string;
   constructor( private authService: AuthService) {  }
 
   ngOnInit() {
+    this.user_email = JSON.parse(localStorage.getItem('currentUser')).email;
   }
   onLogout(){
     this.authService.logout();

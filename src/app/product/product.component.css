@@ -19,3 +19,77 @@
 a:hover {
     text-decoration: none;
 }
+
+.tab-content {
+    border:none;
+    height: 300px;
+    overflow: hidden;
+}
+.nav .nav-tabs {
+    border: none;
+}
+ 
+.btn-add{
+    background-color: #f4511e;
+    color: azure;
+}
+.btn-add:hover{
+    background-color: OrangeRed;
+    
+}
+
+.text-underline{
+    color: azure;
+}
+
+.table-danger {
+    background-color: #FFDBAD;
+}
+.table-warning{
+    background-color: #B28A55;
+}
+.table-info {
+    background-color: #FFD094;
+}
+.table-suc{
+    background-color: #94D9FF;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    
+    
+    transition: all 0.5s;
+    cursor: pointer;
+    
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\226B	';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

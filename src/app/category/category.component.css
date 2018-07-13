@@ -1,0 +1,70 @@
+.btn-add{
+    background-color: #f4511e;
+    
+}
+.btn-add:hover{
+    background-color: OrangeRed;
+    
+}
+
+.btn-add span{
+    color: azure;
+}
+.btn-ghost-success {
+    /* color: #4dbd74; */
+    color: #f4511e;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+}
+
+.btn-ghost-success:focus {
+    background-color: #f4511e;
+    color: white;
+}
+.btn-ghost-success:hover {
+    background-color: #f4511e;
+    color: white;
+}
+.btn-ghost-success:not(:disabled):not(.disabled):active:focus, .btn-ghost-success:not(:disabled):not(.disabled).active:focus, .show > .btn-ghost-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #f4511e;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10pt;
+    
+    
+    transition: all 0.5s;
+    cursor: pointer;
+    
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\2295	';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

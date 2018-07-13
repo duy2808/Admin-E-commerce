@@ -1,0 +1,54 @@
+
+
+@media all and (max-width: 400px){
+    .app-header .nav-item .nav-link {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: 0;
+        border: 0;
+        left: 13%;
+    }
+}
+.btn-add-01{
+   
+    color: #f4511e;
+}
+.navbar-brand-full{
+    color: #f4511e;
+}
+.btn-add{
+    background-color: #f4511e;
+    color: azure;
+}
+.btn-add:hover{
+    background-color: OrangeRed;
+    
+}
+.btn-add span{
+    color: azure;
+}
+fas {
+    color: #f4511e;
+}
+.fas:hover{
+    color: OrangeRed;
+    
+}
+.sidebar .nav-link .nav-icon {
+    display: inline-block;
+    width: 1.09375rem;
+    margin: 0 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: azure;
+    text-align: center;
+}
+
+.sidebar .nav-link .nav-icon:hover{
+    color: OrangeRed;
+}
+.sidebar .nav-link:hover {
+    color: OrangeRed;
+}
+.text-warning {
+    color: #00FFCE!important;
+}

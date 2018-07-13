@@ -34,7 +34,7 @@
 }
 
 .sidebar {
-    background: rgba(21,78,96,.8);
+    background: #f4511e;
 }
 
 #snackbar {
@@ -77,4 +77,11 @@
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+.ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #f4511e!important;
+    color: #fefefe;
+    cursor: default;
 }

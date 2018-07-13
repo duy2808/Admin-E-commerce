@@ -3,8 +3,9 @@
           <div class="col-md-6 col-lg-5">
             <div class="card p-4">
               <div class="card-body">
-                <h3>Login</h3>
-                <p class="text-muted">Sign In to your account</p>
+                <h3> Sign In </h3>
+                <h5> to continue with Admin </h5>
+                <br>
                 <form [formGroup]="loginAdminForm" (ngSubmit)="onSubmit()">
       
                   <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
@@ -41,12 +42,12 @@
                 </div>
                   <div class="row">
                     <div class="col-6">
-                      <button [disabled]="loading" type="submit" class="btn btn-primary px-4">Login</button>
+                      <button [disabled]="loading" type="submit" class="btn btn-add px-4">Login</button>
                       <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
                       />
                     </div>
                     <div class="col-6 text-right">
-                      <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                      <button type="button" class="btn text-danger px-0">Forgot password?</button>
                     </div>
                     <div class="col-12 mt-3">
                       <div *ngIf="error" class="text-danger"><i class="icon-close"></i> Email or Password is incorrect</div>
@@ -59,20 +60,9 @@
         </div>
         <div class="row text-center">
           <div class="col-12">
-            <p class="mb-0"><code>baodoan.user.test@gmail.ccom</code></p>
-            <p class="mb-0"><code>123456</code></p>
+            <p class="mb-0 name">a.dtran28.08.96@gmail.com</p>
+            <p class="mb-0 name">8980501</p>
           </div>
-          <div class="col-12">
-            <p class="mb-0"><code>baodoan.test.uesr@gmail.com</code></p>
-            <p class="mb-0"><code>654321</code></p>
-          </div>
-          <div class="col-12">
-            <p class="mb-0"><code>hello.world.test.x@gmail.com</code></p>
-            <p class="mb-0"><code>123456</code></p>
-          </div>
-          <div class="col-12">
-            <p class="mb-0"><code>bao.guest.test@gmail.com</code></p>
-            <p class="mb-0"><code>123456</code></p>
-          </div>
+          
         </div>
       </div>

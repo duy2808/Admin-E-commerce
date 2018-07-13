@@ -5,7 +5,7 @@
        <!--Add book button-->
     
     
-       <button type="button" class="btn btn-warning " >
+       <button type="button" class="btn btn-add button " >
           <a routerLink="/product-add" href="" >
             
             <span class="text-underline">Add new product</span>
@@ -90,7 +90,7 @@
             <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal" class="table-warning " >{{book.author}}</td>
             <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal" class="text-01 table-info"><span>{{book.publisher}}</span></td>
             
-            <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal" class="table-success font-weight-bold book-selling-price">{{book.sellingPrice}}d</td>
+            <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal" class="table-suc font-weight-bold book-selling-price">{{book.sellingPrice}}d</td>
             <td (click)="onSelect(book)" data-target="#modalProductDetail" data-toggle="modal" > <del>  {{book.previousPrice}}d</del></td>
             <td>
               <span class="d-block text-right">
@@ -143,17 +143,17 @@
               <h2>{{selectedBook.title}}</h2>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="description font-italic">
+                  <div class="description font-italic ">
                       {{selectedBook.shortDescription}}
                   </div>
                 </div>
               </div>
-              
+              <hr>
               <div class="row">
                   
                   <div class="col-md-6">
                       <div class="product-price  ">
-                          <h4>{{selectedBook.previousPrice}}d</h4>
+                          <h4><del> {{selectedBook.previousPrice}}d</del></h4>
                       </div>
                       
                     </div>
@@ -172,7 +172,7 @@
                     aria-controls="description"
                     role="tab"
                     data-toggle="tab"
-                    class="nav-link active"
+                    class="nav-link active "
                     >Description</a>
                   </li>
                   <li role="presentation" class="nav-item">
@@ -197,7 +197,7 @@
                 <!-- Tab panes -->
               <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="description">
-                      <div class="top-10" [innerHTML]="selectedBook.fullDescription" >
+                      <div class="top-10 " [innerHTML]="selectedBook.fullDescription" >
                           
                       </div>
                       
@@ -292,6 +292,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- Modal: EDIT BOOK -->
   <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -306,29 +308,29 @@
           <div class="container-fluid">
             <div *ngIf="selectedBook" class="row">
               <div class="col-12 mb-3">
-                <div class="form-group">
+                <div class="form-group text-danger">
                   <label for="formAddBookTitle">Title (*)</label>
                   <input [(ngModel)]="selectedBook.title" type="text" id="formAddBookTitle" name="formAddBookTitle" class="form-control myInput-elegant-2"
                     placeholder="">
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 mb-3">
-                <div class="form-group">
+                <div class="form-group text-danger">
                   <label for="formAddBookAuthor">Author (*)</label>
                   <input [(ngModel)]="selectedBook.author" type="text" id="formAddBookAuthor" name="formAddBookAuthor" class="form-control myInput-elegant-2"
                     placeholder="">
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 mb-3">
-                <div class="form-group">
+                <div class="form-group text-danger">
                   <label for="formAddBookPublisher">Publisher (*)</label>
                   <input [(ngModel)]="selectedBook.publisher" type="text" id="formAddBookPublisher" name="formAddBookPublisher" class="form-control myInput-elegant-2"
                     placeholder="">
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 mb-3">
-                <div class="form-group">
-                  <label for="formEditBookSelectGenre">Genre (*)</label>
+                <div class="form-group text-danger">
+                  <label for="formEditBookSelectGenre ">Genre (*)</label>
                   <select *ngIf="genres" [(ngModel)]="selectedBook.genre" [compareWith]="compareFn" class="form-control" id="formEditBookSelectGenre">
                     <option *ngFor="let x of genres" [ngValue]="x">{{x.name}}</option>
                   </select>
@@ -363,21 +365,21 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 mb-3">
-                <div class="form-group">
+                <div class="form-group text-danger">
                   <label for="formAddBookPreviousPrice">Previous Price (*)</label>
                   <input [(ngModel)]="selectedBook.previousPrice" type="number" min="0" id="formAddBookPreviousPrice" name="formAddBookPreviousPrice"
                     class="form-control myInput-elegant-2" placeholder="">
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-4 mb-3">
-                <div class="form-group">
+                <div class="form-group text-danger">
                   <label for="formAddBookSellingPrice">Selling Price (*)</label>
                   <input [(ngModel)]="selectedBook.sellingPrice" type="number" min="0" id="formAddBookSellingPrice" name="formAddBookSellingPrice"
                     class="form-control myInput-elegant-2" placeholder="">
                 </div>
               </div>
               <div class="col-12 col-md-8 mb-3">
-                <div class="form-group">
+                <div class="form-group text-danger">
                   <label for="formAddBookImages">Main Image (*)</label>
                   <input [(ngModel)]="selectedBook.images.main" type="text" id="formAddBookImages" name="formAddBookImages" class="form-control myInput-elegant-2 mb-2"
                     placeholder="" *ngIf="selectedBook.images">
@@ -435,7 +437,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button (click)="updateBook()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+          <button (click)="updateBook()" type="button" class="btn btn-add" data-dismiss="modal">Save changes</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
         </div>
       </div>

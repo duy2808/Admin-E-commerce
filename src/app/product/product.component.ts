@@ -87,7 +87,7 @@ export class ProductComponent implements OnInit {
  
   getBooks(): void {
     this.bookService.getBooks().subscribe(z => this.books = z);
-    this.bookService.getBooks().subscribe(() => this.showSpinner = false)
+    this.bookService.getBooks().subscribe(() => this.showSpinner = false);
   
   };
   getGenres(): void {

@@ -20,6 +20,7 @@ export class CategoryComponent implements OnInit {
   notification = {}; 
   on_s: string = "items";
   
+  showSpinner: boolean = true;
   constructor(private genreService: GenreService, private location: Location, private route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -34,6 +35,7 @@ export class CategoryComponent implements OnInit {
   }
   getGenres(): void {
     this.genreService.getGenres().subscribe(z => this.genres = z);
+    this.genreService.getGenres().subscribe(() => this.showSpinner = false);
   };
   
   addGenre(): void {

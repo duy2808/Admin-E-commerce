@@ -85,3 +85,16 @@
     color: #fefefe;
     cursor: default;
 }
+
+.btn-outline-secondary {
+    color: #fefefe;
+    background-color: #f4511e;
+    background-image: none;
+    border-color: #fefefe;
+}
+.btn-outline-secondary:hover {
+    color: #c8ced3;
+    background-color: OrangeRed;
+    background-image: none;
+    border-color: #c8ced3;
+}
